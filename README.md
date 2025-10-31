@@ -19,7 +19,7 @@ export GAZEBO_MODEL_PATH=~/catkin_ws/src/turtlebot3_brownhall/models:${GAZEBO_MO
 export GAZEBO_RESOURCE_PATH=~/catkin_ws/src/turtlebot3_brownhall/models:${GAZEBO_RESOURCE_PATH}
 ```
 
-## use
+## use with teleop
 
 Start the robot in a custom gazebo world with the following launch file.
 
@@ -34,10 +34,23 @@ roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch
 ```
 
 
- 
+## use with navigation
+start the robot and simulation
+```
+roslaunch turtlebot3_brownhall turtlebot3_brownhall.launch
 
+```
 
+start navigation nodes, specify the map
+```
+roslaunch turtlebot3_navigation turtlebot3_navigation.launch map_file:='$(find turtlebot3_brownhall)/maps/bh3_map2.yaml'
+```
 
+send a list of goals
+```
+rosrun turtlebot3_brownhall publish_goallist
+
+```
 
 
 

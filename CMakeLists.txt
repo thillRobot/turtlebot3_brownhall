@@ -205,3 +205,8 @@ include_directories(
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
+
+# publish_actiongoal_list
+add_executable(publish_goallist src/publish_goallist.cpp)
+target_link_libraries(publish_goallist ${catkin_LIBRARIES})
+
